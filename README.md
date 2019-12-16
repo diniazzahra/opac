@@ -1,5 +1,9 @@
 # OPAC: Online Public Access Catalog
 
-1. Clone repository ini
-2. Bekerja pada branch masing-masing sehingga tidak mengganggu branch master
-3. 
+##Instalasi
+* Clone repository ini
+* Run command `composer install`
+* Copy file `.env.example` dan hasil copy tersebut rename menjadi `.env`
+* Sesuai nama database, username, password dan app_url
+* Buat branch dengan nama masing-masing
+* Bekerja pada branch masing-masing sehingga tidak mengganggu branch master
