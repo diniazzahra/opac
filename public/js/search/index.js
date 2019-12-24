@@ -42,9 +42,7 @@ function initVue() {
                         if(d.status){
                             vm.dataBuku = d.data.data;
                             vm.totalItem = d.data.total;
-                            if(d.data.to != null){
-                                vm.itemDisplay = d.data.to;
-                            }
+                            vm.itemDisplay = d.data.data.length;
                         }else{
                             vm.showNotification('Something happened: '+d.message);
                         }
