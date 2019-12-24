@@ -20,6 +20,7 @@ class AjaxKelasController extends AjaxController
         'wali_kelas' => 'bail|required|alpha_num',
         'semester' => 'bail|required|numeric'
     ];
+
     public function save(Request $request){
         $validator = Validator::make($request->all(), $this->rules);
         if($validator->fails()){

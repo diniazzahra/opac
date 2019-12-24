@@ -15,10 +15,15 @@
 * Buat branch dengan nama masing-masing
 * Bekerja pada branch masing-masing sehingga tidak mengganggu branch master
 
-##Update 19 Des 2019
+## Update 19 Des 2019
 * Run `composer update`
 * Run  `php artisan ui bootstrap --auth`
 * Run  `npm run dev`
+
+## Update 24 Des 2019
+* Run `composer update`
+* Run `php artisan migrate`
+* Run `php artisan db:seed`
 
 ## Aturan penulisan
 1. Nama controller di menggunakan CamelCase dan inherit terhadap class `Controller`. Contoh: IndexController, KaryawanController
@@ -36,5 +41,4 @@ if(typeof pjax !== 'undefined'){
     pjax.refresh();
 }
 ``
-4. Setiap halaman HTML aplikasi harus berada dalam komponen Vue yang unik. ID komponen utama sebuah template mengikuti nama controller+action. Misal: `<script type="text/x-template" id="vc-index-index"></script>`.
-5. Jika sebuah komponen dapat digunakan oleh file lain, komponen disimpan secara terpisah pada file `view/vue-templates/` yang dapat di-include pada setiap halaman aplikasi
+

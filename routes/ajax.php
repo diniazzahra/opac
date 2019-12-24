@@ -17,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "ajax" middleware group. Enjoy building your API!
 |
 */
-Route::name('ajax.nama.')->group(function (){
-    Route::post('/nama/sub1', 'AjaxNamaController@sub1')->name('sub1');
-    Route::get('/nama/sub2', 'AjaxNamaController@sub2')->name('sub2');
+Route::name('ajax.buku.')->group(function (){
+    Route::get('/buku/search', 'AjaxBuku@search')->name('search');
 });
-
-
 

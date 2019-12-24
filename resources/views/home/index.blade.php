@@ -10,7 +10,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
 @section('main_content')
     <div class="main_content_app d-none">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style-front.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/home/index.css')}}">
         <!-- main app -->
         <div id="app">
             <vc-home-index></vc-home-index>
@@ -26,7 +26,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                 <form class="app-search col-12 col-lg-8" action="{{route('search.index')}}" method="get">
                                     <div class="app-search-box">
                                         <div class="input-group bootstrap-touchspin">
-                                            <input type="text" class="form-control" name="query" autocomplete="off" placeholder="Judul buku">
+                                            <input autofocus type="text" class="form-control" name="query" autocomplete="off" placeholder="Judul buku">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected waves-effect" type="submit"><i class="mdi mdi-cloud-search"></i> Cari</button>
                                             </div>
@@ -37,7 +37,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             <div class="row mt-2">
                                 <div class="col-12">
                                     <div class="text-center">
-                                        <button class="btn btn-default mx-auto text-white" data-target="#modalAdvandedSearch" data-toggle="modal"><i class="mdi mdi-menu"></i>
+                                        <button class="btn btn-purple waves-effect btn-rounded text-white" data-target="#modalAdvandedSearch" data-toggle="modal"><i class="mdi mdi-menu"></i>
                                             Pencarian
                                             Spesifik
                                         </button>
@@ -50,7 +50,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
                 <section class="section">
                     <div class="container-fluid">
-                        <h3 class="text-center mb-5">Koleksi buku</h3>
+                        <h3 class="text-center mb-5 pt-3">Koleksi buku</h3>
                         <div class="row" id="counter">
                             <div class="col-lg-4 col-sm-6">
                                 <div class="text-center p-3">
@@ -113,7 +113,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Cari</button>
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Cari</button>
                                     <button type="button" class="btn btn-lighten-warning" data-dismiss="modal">Batal</button>
                                 </div>
                             </form>
