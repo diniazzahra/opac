@@ -1,19 +1,10 @@
-/**
- * Components
- */
 var vcMainTemplate = {
     template: '#vc-home-index',
-    props: {
-
-    },
-    data: function () {
+    data: function(){
         return{
-
         }
     },
-    mounted: function () {
-    }
-}
+};
 /**
  * init
  */

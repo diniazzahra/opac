@@ -15,7 +15,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         <div id="app">
             <vc-home-index></vc-home-index>
         </div>
-        {{--Define your template components below--}}
+        {{--Templates--}}
         <script type="text/x-template" id="vc-home-index">
             <div>
                 <div class="wrapper"></div>

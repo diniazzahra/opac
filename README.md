@@ -42,3 +42,10 @@ if(typeof pjax !== 'undefined'){
 }
 ``
 
+## Pjax + Vue + Laravel
+Untuk dapat menggunakan ketiga fungsi tersebut secara maksimal, dapt menggunakan salah satu opsi berikut:
+1. Menggunakan html biasa.
+    Seluruh TAG HTML harus dimasukkan ke dalam x-template, agar seluruh tag HTML dianggap sebagai komponen Vue. Setiap halaman aplikasi harus berada dalam komponen Vue yang unik. ID komponen utama sebuah template mengikuti nama controller+action. Misal: `<script type="text/x-template" id="vc-home-index"></script>`. Jika sebuah komponen dapat digunakan oleh file lain, komponen disimpan secara terpisah pada file `view/vue-templates/` yang dapat di-include pada setiap halaman aplikasi. Ingat, SETIAP KOMPONEN HARUS DIREGISTRASI di Vue
+2. Menggunakan componen Vue dari library (misal Bootstrap Vue, dll).
+Komponen tampilan dapat dilihat di masing-masing library. Silakan menggunakan komponen yang tersedia, sehingga fungsi Pjax dapat berjalan maksimal
+    

@@ -66,7 +66,7 @@
             $('.main_content_app').addClass('d-none');
             $('.app-placeholder').removeClass('d-none');
         });
-        document.addEventListener('pjax:error', function(){
+        document.addEventListener('pjax:error', function(event, xhr, textStatus, errorThrown, options){
             pjax.reload();
         });
         document.addEventListener("DOMContentLoaded", function() {
