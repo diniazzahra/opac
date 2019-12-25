@@ -124,6 +124,5 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         </script>
         {{--Define your javascript below--}}
         <script type="text/javascript" src="{{asset('js/home/index.js')}}"></script>
-        <script type="text/javascript" src="{{asset('js/counter.int.js')}}"></script>
     </div>
 @endsection
