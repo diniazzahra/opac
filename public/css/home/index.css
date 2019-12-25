@@ -1,0 +1,9 @@
+.bg-home1{
+    background-image: url("/images/bg-home1.jpg");
+    background-position: center center;
+}
+
+.bg-home {
+    position: relative;
+    padding: 100px 0px 200px;
+}

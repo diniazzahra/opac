@@ -13,7 +13,10 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Application'),
+    'name_long' => env('APP_NAME_LONG', 'Application of Digistlab'),
+    'keywords' => env('APP_KEYWORDS', 'application'),
+    'author' => env('APP_AUTHOR', 'Digistlab'),
 
     /*
     |--------------------------------------------------------------------------

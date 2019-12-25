@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapAjaxRoutes();
     }
 
     /**
@@ -69,5 +69,12 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapAjaxRoutes(){
+        Route::prefix('ajax')
+            ->middleware('web')
+            ->namespace($this->namespace.'\\Ajax')
+            ->group(base_path('routes/ajax.php'));
     }
 }
