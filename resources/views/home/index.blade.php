@@ -1,6 +1,6 @@
 <?php
 use App\Libs\AppHelpers;
-$title = 'Home';
+$title = 'Faraby';
 $appendTitle = AppHelpers::appendTitle($title, true);
 ?>
 
