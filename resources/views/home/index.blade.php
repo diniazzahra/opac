@@ -19,7 +19,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         <script type="text/x-template" id="vc-home-index">
             <div>
                 <div class="wrapper"></div>
-                <section style ="background-image: url('{{asset('images/bg.jpg')}}'); background-width: 50%" class="bg-home1 bg-home">
+                <section class="bg-home1 bg-home">
                     <div class="wrapper pt-0">
                         <div class="container-fluid">
                             <div class="row justify-content-center">
