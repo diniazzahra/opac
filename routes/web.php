@@ -25,6 +25,10 @@ Route::prefix('search')->group(function (){
     Route::get('/advanced', 'SearchController@advanced')->name('search.advanced');
 });
 
+Route::prefix('buku')->group(function(){
+    Route::get('/detail/{id}','BukuController@detail')->name('buku.detail');
+});
+
 /**
  * Testing purposes onlye
  */

@@ -79,7 +79,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
                                         <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
                                     </div>
-                                    <button type="button" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</button>
+                                    <b-button href="{{route('buku.detail',['id' => 1])}}" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
                                 </div>
                             </div>
                         </div> <!-- end col -->

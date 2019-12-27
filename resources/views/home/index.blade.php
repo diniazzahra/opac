@@ -1,6 +1,6 @@
 <?php
 use App\Libs\AppHelpers;
-$title = 'Home';
+$title = 'Faraby';
 $appendTitle = AppHelpers::appendTitle($title, true);
 ?>
 
@@ -26,7 +26,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                 <form class="app-search col-12 col-lg-8" action="{{route('search.index')}}" method="get">
                                     <div class="app-search-box">
                                         <div class="input-group bootstrap-touchspin">
-                                            <input autofocus type="text" class="form-control" name="query" autocomplete="off" placeholder="Judul buku">
+                                            <input autofocus type="text" class="form-control input-search" name="query" autocomplete="off" placeholder="Judul buku">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected waves-effect" type="submit"><i class="mdi mdi-cloud-search"></i> Cari</button>
                                             </div>
