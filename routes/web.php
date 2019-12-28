@@ -17,21 +17,22 @@ use Illuminate\Support\Facades\Route;
  * Home controller
  */
 Route::get('/', 'HomeController@index')->name('home');
+
 /**
- * Search
+ * Buku
  */
-Route::prefix('search')->group(function (){
-    Route::get('/', 'SearchController@index')->name('search.index');
-    Route::get('/advanced', 'SearchController@advanced')->name('search.advanced');
+Route::prefix('buku')->name('buku.')->group(function (){
+    Route::get('/detail/{id?}', 'BukuController@detail')->name('detail');
+    Route::get('/search', 'BukuController@search')->name('search');
 });
 
 /**
  * Testing purposes onlye
  */
-Route::prefix('test')->group(function (){
-    Route::get('/', 'TestController@index')->name('test.index');
-    Route::get('/test1', 'TestController@test1')->name('test.test1');
-    Route::get('/test2', 'TestController@test2')->name('test.test2');
+Route::prefix('test')->name('test.')->group(function (){
+    Route::get('/', 'TestController@index')->name('index');
+    Route::get('/test1', 'TestController@test1')->name('test1');
+    Route::get('/test2', 'TestController@test2')->name('test2');
 });
 
 

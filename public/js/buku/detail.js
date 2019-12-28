@@ -1,13 +1,24 @@
 /**
- * Templates
+ *  Templates
  */
 var vcMainTemplate = {
-    template: '#vc-home-index',
+    template: '#vc-buku-search',
+    props:{
+
+    },
     data: function(){
         return{
+
         }
     },
+    methods:{
+
+    },
+    mounted: function () {
+
+    }
 };
+
 /**
  * init
  */
@@ -16,13 +27,15 @@ function initVue() {
         el: '#app',
         data: {
         },
+        methods:{
+        },
         mounted: function () {
             if(typeof pjax !== 'undefined'){
                 pjax.refresh();
             }
         },
         components: {
-            'vc-home-index': vcMainTemplate
+            // 'vc-buku-search': vcMainTemplate
         }
     });
     $('.app-placeholder').addClass('d-none');

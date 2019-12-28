@@ -18,12 +18,13 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         {{--Templates--}}
         <script type="text/x-template" id="vc-home-index">
             <div>
+                <!-- Page content -->
                 <div class="wrapper"></div>
                 <section class="bg-home1 bg-home">
                     <div class="wrapper pt-0">
                         <div class="container-fluid">
                             <div class="row justify-content-center">
-                                <form class="app-search col-12 col-lg-8" action="{{route('search.index')}}" method="get">
+                                <form class="app-search col-12 col-lg-8" action="{{route('buku.search')}}" method="get">
                                     <div class="app-search-box">
                                         <div class="input-group bootstrap-touchspin">
                                             <input autofocus type="text" class="form-control" name="query" autocomplete="off" placeholder="Judul buku">

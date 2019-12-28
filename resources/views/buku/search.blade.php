@@ -17,23 +17,29 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
 @section('main_content')
     <div class="main_content_app d-none">
-        <div id="app" data-search-query="<?=$searchQuery?>" data-url-search="{{route('ajax.buku.search')}}">
+        <div id="app">
+            <vc-buku-search search-url="{{route('ajax.buku.search')}}" query-param="<?=$searchQuery?>" detail-url="{{route('buku.detail')}}"></vc-buku-search>
+        </div>
+
+        {{--  Define x-template--}}
+        <script type="text/x-template" id="vc-buku-search">
             <div class="wrapper">
                 <div class="container-fluid">
                     <!-- Page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
-                                @include('partials.breadcrumb', ['breadcrumbs' => ['search.index' => 'Pencarian']])
+                                @include('partials.breadcrumb', ['breadcrumbs' => ['buku.search' => 'Pencarian']])
                                 <h4 class="page-title"><?=$title?></h4>
                             </div>
                         </div>
                     </div>
+                    <!-- Page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="container-fluid">
                                 <div class="text-center">
-                                    <form class="col-lg-12" action="{{route('search.index')}}" method="get" @submit.prevent="clickToSearch">
+                                    <form class="col-lg-12" action="{{route('buku.search')}}" method="get" @submit.prevent="clickToSearch">
                                         <div class="app-search-box">
                                             <div class="input-group bootstrap-touchspin">
                                                 <input autofocus type="text" class="form-control" name="query" autocomplete="off" placeholder="Judul buku" id="searchQuery" v-model="searchQuery">
@@ -61,25 +67,22 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4"  v-for="buku in dataBuku">
+                        <div class="col-lg-4 col-md-6"  v-for="buku in dataBuku">
                             <div class="text-center card-box">
                                 <div>
                                     <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
 
                                     <p class="text-muted font-13 mb-3">
-                                       @{{ buku.judul }}
+                                        @{{ buku.judul }}
                                     </p>
 
                                     <div class="text-left">
                                         <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
-
                                         <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
-
                                         <p class="text-muted font-13"><strong>Tahun terbit :</strong> <span class="ml-2">@{{ buku.tahun_terbit }}</span></p>
-
                                         <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
                                     </div>
-                                    <button type="button" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</button>
+                                    <b-button @click="loadPjax(buku.id)" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
                                 </div>
                             </div>
                         </div> <!-- end col -->
@@ -95,9 +98,8 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                     </b-alert>
                 </div>
             </div>
-        </div>
-
+        </script>
         {{--Define your javascript below--}}
-        <script type="text/javascript" src="{{asset('js/search/index.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/buku/search.js')}}"></script>
     </div>
 @endsection
