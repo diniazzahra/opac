@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
  *
  */
 $(document).ready(function(){
+    $("#navigation").find("li").on("click", "a", function () {
+        //$('.submenue.in').collapse('hide');
+    });
     // var appUrl = location.protocol+'//'+location.hostname+''+location.pathname;
     // if(appUrl.endsWith('/')){
     //     appUrl = appUrl.substring(0, appUrl.length  - 1);

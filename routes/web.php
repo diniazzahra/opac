@@ -29,10 +29,9 @@ Route::prefix('buku')->name('buku.')->group(function (){
 /**
  * Testing purposes onlye
  */
-Route::prefix('test')->name('test.')->group(function (){
-    Route::get('/', 'TestController@index')->name('index');
-    Route::get('/test1', 'TestController@test1')->name('test1');
-    Route::get('/test2', 'TestController@test2')->name('test2');
+Route::prefix('development')->name('development.')->group(function (){
+    Route::get('/html', 'DevelopmentController@html')->name('html');
+    Route::get('/vue-component', 'DevelopmentController@vueComponent')->name('vue-component');
 });
 
 

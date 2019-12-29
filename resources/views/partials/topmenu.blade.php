@@ -10,41 +10,19 @@
         <div id="navigation">
             <!-- Navigation Menu-->
             <ul class="navigation-menu">
-
                 <li class="has-submenu">
                     <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Home</a>
                 </li>
+                @if(App::environment('local'))
+                <li class="has-submenu">
+                    <a href="#"><i class="mdi mdi-developer-board"></i>Development <div class="arrow-down"></div></a>
+                    <ul class="submenu">
+                        <li><a href="{{route('development.html')}}" data-toggle="collapse" data-target=".navbar-collapse.show">HTML</a></li>
+                        <li><a href="{{route('development.vue-component')}}">Vue component</a></li>
+                        <li><a href="#" data-toggle="navigation-menu" data-target=".in">Vue component</a></li>
+                    </ul>
+                @endif
 
-{{--                <li class="has-submenu">--}}
-{{--                    <a href="#">--}}
-{{--                        <i class="mdi mdi-lifebuoy"></i>Components <div class="arrow-down"></div></a>--}}
-{{--                    <ul class="submenu">--}}
-{{--                        <li class="has-submenu">--}}
-{{--                            <a href="#">Forms <div class="arrow-down"></div></a>--}}
-{{--                            <ul class="submenu">--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">General Elements</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">Advanced Form</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">Form Validation</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">Form Wizard</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">Form Uploads</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">Quilljs Editor</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#">X-editable</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
 {{--                        <li class="has-submenu">--}}
 {{--                            <a href="#">Tables <div class="arrow-down"></div></a>--}}
 {{--                            <ul class="submenu">--}}

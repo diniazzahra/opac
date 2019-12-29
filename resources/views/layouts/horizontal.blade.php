@@ -30,7 +30,7 @@
     <script type="text/javascript" src="{{asset('js/bootstrap-vue.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/pjax.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/pjax-event.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/app-custom.js')}}"></script>
 </head>
 <body class="drop-menu-dark">
 <!-- Pre-loader -->
