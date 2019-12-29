@@ -1,6 +1,6 @@
 <?php
 use App\Libs\AppHelpers;
-$title = 'Faraby';
+$title = 'Perpustakaan';
 $appendTitle = AppHelpers::appendTitle($title, true);
 ?>
 
