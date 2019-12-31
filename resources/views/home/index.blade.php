@@ -12,8 +12,8 @@ $appendTitle = AppHelpers::appendTitle($title, true);
     <div class="main_content_app d-none">
         <link rel="stylesheet" type="text/css" href="{{asset('css/home/index.css')}}">
         <!-- main app -->
-        <div id="app">
-            <vc-home-index></vc-home-index>
+        <div id="app" >
+            <vc-home-index url-count-all="{{route('ajax.buku.count-all')}}"></vc-home-index>
         </div>
         {{--Templates--}}
         <script type="text/x-template" id="vc-home-index">
@@ -59,7 +59,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                         <i class="mdi mdi-library-books display-4"></i>
                                     </div>
                                     <div class="counter-content text-white">
-                                        <h2 class="counter-value mb-3" data-count="1200">0</h2>
+                                        <h2 class="counter-value mb-3" :data-count="totalBuku">@{{totalBuku}}</h2>
                                         <h5 class="counter-name">Total buku</h5>
                                     </div>
                                 </div>

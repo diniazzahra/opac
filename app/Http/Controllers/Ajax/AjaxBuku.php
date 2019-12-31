@@ -22,4 +22,11 @@ class AjaxBuku extends AjaxController
         $this->reply['data'] = $all;
         return response($this->reply, 200);
     }
+
+    public function countAll(Request $request){
+        $count = Buku::query()->count();
+        $this->reply['data'] = ['total' => $count];
+        $this->reply['status'] = true;
+        return response($this->reply, 200);
+    }
 }

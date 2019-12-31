@@ -19,5 +19,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::name('ajax.buku.')->group(function (){
     Route::get('/buku/search', 'AjaxBuku@search')->name('search');
+    Route::get('/buku/count-all', 'AjaxBuku@countAll')->name('count-all');
 });
 
