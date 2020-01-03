@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "ajax" middleware group. Enjoy building your API!
 |
 */
+/**
+ * TODO Gunakan signed URL
+ */
 Route::name('ajax.buku.')->group(function (){
     Route::get('/buku/search', 'AjaxBuku@search')->name('search');
     Route::get('/buku/count-all', 'AjaxBuku@countAll')->name('count-all');

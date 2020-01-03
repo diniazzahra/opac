@@ -18,7 +18,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 @section('main_content')
     <div class="main_content_app d-none">
         <div id="app">
-            <vc-buku-search search-url="{{route('ajax.buku.search')}}" query-param="<?=$searchQuery?>" detail-url="{{route('buku.detail')}}"></vc-buku-search>
+            <vc-buku-search search-url="{{route('ajax.buku.search')}}" query-param="<?=$searchQuery?>" detail-url="{{url('buku/detail')}}"></vc-buku-search>
         </div>
 
         {{--  Define x-template--}}
