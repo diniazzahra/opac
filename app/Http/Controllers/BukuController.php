@@ -39,7 +39,9 @@ class BukuController extends Controller
         if(is_null($buku)){
             return redirect()->back();
         }
-        $data = [];
+        $data = [
+            'buku'=>$buku
+        ];
         return $this->renderPage($request, 'buku.detail', $data);
     }
 

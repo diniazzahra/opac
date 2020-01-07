@@ -34,8 +34,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                         <div class="col-md-8">
                             <div class="card-box task-detail">
                                 <div class="dropdown float-right">
-                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="mdi mdi-dots-vertical"></i>
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
+                                       aria-expanded="false">
+                                        <i class="mdi mdi-book-plus"></i><small> Tambah Ke Koleksi </small>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <!-- item-->
@@ -49,17 +50,21 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
                                 <div class="media mb-3">
-                                    <img class="d-flex mr-3 rounded-circle avatar-md" alt="64x64" src="assets/images/users/user-2.jpg">
+                                    <img class="d-flex mr-3 rounded-circle avatar-md" alt="64x64"
+                                         src="{{asset('images/book-thumbnail.jpg')}}">
                                     <div class="media-body">
-                                        <h4 class="media-heading mt-0">Michael Zenaty</h4>
-                                        <span class="badge badge-danger">Urgent</span>
+                                        <h4 class="media-heading mt-0">{{ $buku->judul }}</h4>
+                                        <span class="badge badge-success">{{ $buku->tajuk_subjek }}</span>
                                     </div>
                                 </div>
 
-                                <h4>Code HTML email template for welcome email</h4>
+                                <h4>Ringkasan Buku</h4>
 
                                 <p class="text-muted">
-                                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint cupiditate non sunt in culpa qui officia deserunt animi est laborum et
+                                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                    excepturi sint cupiditate non sunt in culpa qui officia deserunt animi est laborum
+                                    et
                                 </p>
 
                                 <p class="text-muted">
@@ -68,66 +73,91 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     delectus asperiores libero voluptas quod perferendis erum ipsum dolor sit.
                                 </p>
 
-                                <div class="row task-dates mb-0 mt-2">
+                                <div class="row mb-0 mt-2">
                                     <div class="col-lg-6">
-                                        <h5 class="font-600 m-b-5">Start Date</h5>
-                                        <p> 22 March 2016 <small class="text-muted">1:00 PM</small></p>
+                                        <h5 class="font-600 m-b-5">No Induk</h5>
+                                        <p> {{ $buku->no_induk_buku }} </p>
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <h5 class="font-600 m-b-5">Due Date</h5>
-                                        <p> 17 April 2016 <small class="text-muted">12:00 PM</small></p>
+                                        <h5 class="font-600 m-b-5">ISBN</h5>
+                                        <p> {{ $buku->ISBN != null ? $buku->ISBN : '-' }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Pengarang</h5>
+                                        <p> {{ $buku->pengarang }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Penerbit</h5>
+                                        <p> {{ $buku->penerbit }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Kota Terbit</h5>
+                                        <p> {{ $buku->kota_terbit }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Tahun</h5>
+                                        <p> {{ $buku->tahun_terbit }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Letak Buku</h5>
+                                        <p> Rak {{ $buku->call_number_1 }} </p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5 class="font-600 m-b-5">Jumlah Eksemplar</h5>
+                                        <p> {{ $buku->jumlah_eksemplar }} </p>
                                     </div>
                                 </div>
+
                                 <div class="clearfix"></div>
 
-                                <div class="task-tags mt-2">
-                                    <h5>Tags</h5>
-                                    <input type="text" value="Amsterdam,Washington,Sydney" data-role="tagsinput" placeholder="add tags"/>
-                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p>
+                                            <a id="collapseLinkDetail" class="text-info" data-toggle="collapse" href="#collapseDetail"
+                                               role="button" aria-expanded="false" aria-controls="collapseDetail">
+                                                Tampilkan selengkapnya
+                                            </a>
+                                        </p>
 
-                                <div class="assign-team mt-4">
-                                    <h5>Assign to</h5>
-                                    <div>
-                                        <a href="#"> <img class="rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-2.jpg"> </a>
-                                        <a href="#"> <img class="rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-3.jpg"> </a>
-                                        <a href="#"> <img class="rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-5.jpg"> </a>
-                                        <a href="#"> <img class="rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-8.jpg"> </a>
-                                        <a href="#"><span class="add-new-plus"><i class="mdi mdi-plus"></i> </span></a>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="collapse" id="collapseDetail">
+                                            <div class="card card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <h5 class="font-600">Jilid</h5>
+                                                        <p> {{ $buku->jilid_ke ? "Ke-".$buku->jilid_ke : '-' }} </p>
+                                                    </div>
 
-                                <div class="attached-files mt-4">
-                                    <h5>Attached Files </h5>
-                                    <ul class="list-inline files-list">
-                                        <li class="list-inline-item file-box">
-                                            <a href=""><img src="assets/images/attached-files/img-1.jpg" class="img-fluid img-thumbnail" alt="attached-img" width="80"></a>
-                                            <p class="font-13 mb-1 text-muted"><small>File one</small></p>
-                                        </li>
-                                        <li class="list-inline-item file-box">
-                                            <a href=""><img src="assets/images/attached-files/img-2.jpg" class="img-fluid img-thumbnail" alt="attached-img" width="80"></a>
-                                            <p class="font-13 mb-1 text-muted"><small>Attached-2</small></p>
-                                        </li>
-                                        <li class="list-inline-item file-box">
-                                            <a href=""><img src="assets/images/attached-files/img-3.jpg" class="img-fluid img-thumbnail" alt="attached-img" width="80"></a>
-                                            <p class="font-13 mb-1 text-muted"><small>Dribbble shot</small></p>
-                                        </li>
-                                        <li class="list-inline-item file-box ml-2">
-                                            <div class="fileupload add-new-plus">
-                                                <span><i class="mdi-plus mdi"></i></span>
-                                                <input type="file" class="upload">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="text-right m-t-30">
-                                                <button type="submit" class="btn btn-success waves-effect waves-light">
-                                                    Save
-                                                </button>
-                                                <button type="button"
-                                                        class="btn btn-light waves-effect">Cancel
-                                                </button>
+                                                    <div class="col-lg-6">
+                                                        <h5 class="font-600">Edisi</h5>
+                                                        <p> {{ $buku->edisi_ke ? 'Ke-'.$buku->edisi_ke : '-'}} </p>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <h5 class="font-600">Cetakan</h5>
+                                                        <p> {{ $buku->cetakan_ke ? "Ke-".$buku->cetakan_ke : '-' }} </p>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <h5 class="font-600">Tinggi Buku</h5>
+                                                        <p> {{ $buku->tinggi_buku ? $buku->tinggi_buku : '-'}} cm</p>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <h5 class="font-600">Jumlah Halaman</h5>
+                                                        <p> {{ $buku->jumlah_halaman ? $buku->jumlah_halaman : '-' }} </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -138,105 +168,23 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
                         <div class="col-md-4">
                             <div class="card-box">
-                                <div class="dropdown float-right">
-                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="mdi mdi-dots-vertical"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                                    </div>
-                                </div>
 
-                                <h4 class="header-title mt-0 mb-3">Comments (6)</h4>
+                                <h4 class="header-title mt-0 mb-3">Buku Serupa</h4>
 
                                 <div>
 
                                     <div class="media mb-3">
                                         <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-1.jpg"> </a>
+                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64"
+                                                              src="{{asset('images/book-thumbnail.jpg')}}"> </a>
                                         </div>
                                         <div class="media-body">
-                                            <h5 class="mt-0">Mat Helme</h5>
+                                            <h5 class="mt-0">Judul Buku</h5>
                                             <p class="font-13 text-muted mb-0">
-                                                <a href="" class="text-primary">@Michael</a>
                                                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                                                 ante sollicitudin commodo.
                                             </p>
-                                            <a href="" class="text-success font-13">Reply</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="media mb-3">
-                                        <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-2.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Media heading</h5>
-                                            <p class="font-13 text-muted mb-0">
-                                                <a href="" class="text-primary">@Michael</a>
-                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque sollicitudin purus odio.
-                                            </p>
-                                            <a href="" class="text-success font-13">Reply</a>
-
-                                            <div class="media my-2">
-                                                <div class="d-flex mr-3">
-                                                    <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-3.jpg"> </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="mt-0">Nested media heading</h5>
-                                                    <p class="font-13 text-muted mb-0">
-                                                        <a href="" class="text-primary">@Michael</a>
-                                                        Cras sit amet nibh libero, in gravida nulla vel metus scelerisque ante sollicitudin purus odio.
-                                                    </p>
-                                                    <a href="" class="text-success font-13">Reply</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="media mb-3">
-                                        <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-1.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Mat Helme</h5>
-                                            <p class="font-13 text-muted mb-0">
-                                                <a href="" class="text-primary">@Michael</a>
-                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin commodo cras purus.
-                                            </p>
-                                            <a href="" class="text-success font-13">Reply</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="media mb-3">
-                                        <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-1.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Mat Helme</h5>
-                                            <p class="font-13 text-muted mb-0">
-                                                <a href="" class="text-primary">@Michael</a>
-                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin commodo cras.
-                                            </p>
-                                            <a href="" class="text-success font-13">Reply</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="media mb-3">
-                                        <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64" src="assets/images/users/user-1.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <input type="text" class="form-control input-sm" placeholder="Some text value...">
+                                            <a href="" class="text-success font-13">Lihat Buku</a>
                                         </div>
                                     </div>
 

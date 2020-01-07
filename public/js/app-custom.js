@@ -35,4 +35,11 @@ $(document).ready(function(){
     //         $(this).addClass("uk-active");
     //     }
     // });
+
+    $("#collapseLinkDetail").click(function () {
+        const link = $("#collapseLinkDetail");
+        const detail = $("#collapseDetail");
+        detail.hasClass("show") ? link.text("Tampilkan selengkapnya") : link.text("Sembunyikan");
+    })
+
 });
