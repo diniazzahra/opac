@@ -61,16 +61,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                 <h4>Ringkasan Buku</h4>
 
                                 <p class="text-muted">
-                                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                    excepturi sint cupiditate non sunt in culpa qui officia deserunt animi est laborum
-                                    et
-                                </p>
-
-                                <p class="text-muted">
-                                    Consectetur adipisicing elit. Voluptates, illo, iste
-                                    itaque voluptas corrupti ratione reprehenderit magni similique Tempore quos
-                                    delectus asperiores libero voluptas quod perferendis erum ipsum dolor sit.
+                                    (Tidak tersedia)
                                 </p>
 
                                 <div class="row mb-0 mt-2">
@@ -169,26 +160,30 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                         <div class="col-md-4">
                             <div class="card-box">
 
-                                <h4 class="header-title mt-0 mb-3">Buku Serupa</h4>
+                                <h4 class="header-title mt-0 mb-3">Buku Terkait</h4>
 
-                                <div>
+                                @forelse($bukuTerkait as $buku)
+                                    <div>
 
-                                    <div class="media mb-3">
-                                        <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64"
-                                                              src="{{asset('images/book-thumbnail.jpg')}}"> </a>
+                                        <div class="media mb-3">
+                                            <div class="d-flex mr-3">
+                                                <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64"
+                                                                  src="{{asset('images/book-thumbnail.jpg')}}"> </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{$buku->judul}}</h5>
+                                                <p class="font-13 text-muted mb-0">
+                                                    {{$buku->pengarang}}
+                                                </p>
+                                                <b-link href="{{route('buku.detail',['id'=>$buku->id])}}" variant="info">Lihat Buku</b-link>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Judul Buku</h5>
-                                            <p class="font-13 text-muted mb-0">
-                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin commodo.
-                                            </p>
-                                            <a href="" class="text-success font-13">Lihat Buku</a>
-                                        </div>
+
                                     </div>
+                                    @empty
+                                    <p>(Tidak Tersedia)</p>
+                                @endforelse
 
-                                </div>
                             </div>
                         </div><!-- end col -->
                     </div>

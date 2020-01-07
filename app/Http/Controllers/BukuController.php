@@ -39,8 +39,11 @@ class BukuController extends Controller
         if(is_null($buku)){
             return redirect()->back();
         }
+        $bukuTerkait = Buku::where('tajuk_subjek', $buku->tajuk_subjek)->where('id','!=',$buku->id)
+            ->orderBy("tahun_terbit","DESC")->get();
         $data = [
-            'buku'=>$buku
+            'buku'=>$buku,
+            'bukuTerkait' => $bukuTerkait
         ];
         return $this->renderPage($request, 'buku.detail', $data);
     }
