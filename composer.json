@@ -1,12 +1,23 @@
 {
-    "name": "laravel/laravel",
+    "name": "pizaini/faraby",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
+    "description": "Digital Library Access (For academic and beyond)",
+    "authors": [
+        {
+            "name": "Pizaini",
+            "email": "pizaini@digistlab.com",
+            "homepage": "http://www.digistlab.com",
+            "role": "Manager"
+        }
     ],
-    "license": "MIT",
+    "keywords": [
+        "faraby",
+        "library"
+    ],
+    "support": {
+        "email": "support@digistlab.com"
+    },
+    "license": "Private",
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",

@@ -11,12 +11,26 @@
 |
 */
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /**
  * Home controller
  */
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/sso-redirect', function (Request $request){
+    $request->session()->put('state', $state = Str::random(40));
+    $query = http_build_query([
+        'client_id' => 1,
+        'redirect_uri' => '',
+        'response_type' => 'code',
+        'scope' => '',
+        'state' => $state,
+    ]);
+    return redirect('http://connect.stai-tbh.localhost/oauth/authorize?'.$query);
+});
 
 /**
  * Buku
