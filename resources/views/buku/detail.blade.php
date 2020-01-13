@@ -7,7 +7,7 @@
  * @var string $searchQuery
  */
 use App\Libs\AppHelpers;
-$title = 'Pencarian';
+$title = 'Rincian buku';
 $appendTitle = AppHelpers::appendTitle($title, true);
 ?>
 

@@ -11,7 +11,7 @@ $data = $breadcrumbs ?? [];
 ?>
 <div class="page-title-right">
     <ol class="breadcrumb m-0">
-        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+        <li class="breadcrumb-item"><b-link href="{{route('home')}}">Home</b-link></li>
         @if($data ?? '')
             @foreach ($data as $breadcrumb)
                 <li class="breadcrumb-item active"><?=$title?></li>
