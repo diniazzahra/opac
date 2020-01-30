@@ -13,14 +13,6 @@
                 <li class="has-submenu">
                     <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Home</a>
                 </li>
-                @if(App::environment('local'))
-                <li class="has-submenu">
-                    <a href="#"><i class="mdi mdi-developer-board"></i>Development <div class="arrow-down"></div></a>
-                    <ul class="submenu">
-                        <li><a href="{{route('development.html')}}" data-toggle="collapse" data-target=".navbar-collapse.show">HTML</a></li>
-                        <li><a href="{{route('development.vue-component')}}">Vue component</a></li>
-                    </ul>
-                @endif
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>

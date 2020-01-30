@@ -1,16 +1,15 @@
 <?php
 /**
  * Created by Pizaini <pizaini@uin-suska.ac.id>
- * Date: 26/04/2019
- * Time: 15:08
+ * Date: 14/01/2020
+ * Time: 21:24
  */
 ?>
-<!-- Footer Start -->
-<footer class="footer">
+<footer class="footer" style="left: 0px !important;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                2019 - <?=date('Y')?> &copy; FarabyApp v{{config('app.version')}} by <a href="https://www.digistlab.com" target="_blank">Digistlab</a>
+                2019 - <?=date('Y')?>  &copy; FarabyApp v{{config('app.version')}} by <a href="https://www.digistlab.com" target="_blank">Digistlab</a>
             </div>
             <div class="col-md-6">
                 <div class="text-md-right footer-links d-none d-sm-block">
@@ -22,4 +21,3 @@
         </div>
     </div>
 </footer>
-<!-- end Footer -->
