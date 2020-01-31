@@ -1,10 +1,16 @@
 var pjax;
-document.addEventListener('pjax:send', function(){
+document.addEventListener('pjax:send', function(event){
+    if(event.triggerElement !== undefined && event.triggerElement.pathname === '/auth/logout'){
+        pjax.reload();
+    }
     $('.main_content_app').addClass('d-none');
     $('.app-placeholder').removeClass('d-none');
 });
 document.addEventListener('pjax:error', function(event, xhr, textStatus, errorThrown, options){
     pjax.reload();
+});
+document.addEventListener('pjax:complete', function(event){
+
 });
 document.addEventListener("DOMContentLoaded", function() {
     pjax = new Pjax({
@@ -14,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         ],
         timeout: 3000,
         cacheBust : false,
-        // debug: true
     });
 });
 /**

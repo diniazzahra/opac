@@ -13,6 +13,11 @@
                 <li class="has-submenu">
                     <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Home</a>
                 </li>
+                @if(Auth::check())
+                    <li class="has-submenu">
+                        <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Menu 1</a>
+                    </li>
+                @endif
             </ul>
             <!-- End navigation menu -->
             <div class="clearfix"></div>

@@ -21,6 +21,11 @@ use \Illuminate\Support\Facades\Auth;
                 </a>
                 <!-- End mobile menu toggle-->
             </li>
+            @if(Auth::guest())
+                <li class="dropdown notification-list">
+                    <a class="nav-link waves-effect" href="{{route('auth.login')}}"><i class="fe-log-in"></i> Login</a>
+                </li>
+            @endif
             @if(Auth::check())
                 <li class="d-none d-sm-block">
                     <form class="app-search">
@@ -40,7 +45,7 @@ use \Illuminate\Support\Facades\Auth;
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <i class="fe-bell noti-icon"></i>
-                        <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
+                        <span class="badge badge-danger rounded-circle noti-icon-badge">1</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-lg">
                         <!-- item-->
@@ -58,60 +63,9 @@ use \Illuminate\Support\Facades\Auth;
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                 <div class="notify-icon">
                                     <img src="{{asset('images/logo.png')}}" class="img-fluid rounded-circle" alt="" /> </div>
-                                <p class="notify-details">Cristina Pride</p>
+                                <p class="notify-details">Info</p>
                                 <p class="text-muted mb-0 user-msg">
-                                    <small>Hi, How are you? What about our next meeting</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-primary">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">1 min ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon">
-                                    <img src="{{asset('images/logo.png')}}" class="img-fluid rounded-circle" alt="" /> </div>
-                                <p class="notify-details">Karen Robinson</p>
-                                <p class="text-muted mb-0 user-msg">
-                                    <small>Wow ! this admin looks good and awesome design</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-warning">
-                                    <i class="mdi mdi-account-plus"></i>
-                                </div>
-                                <p class="notify-details">New user registered.
-                                    <small class="text-muted">5 hours ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-info">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">4 days ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-secondary">
-                                    <i class="mdi mdi-heart"></i>
-                                </div>
-                                <p class="notify-details">Carlos Crouch liked
-                                    <b>Admin</b>
-                                    <small class="text-muted">13 days ago</small>
+                                    <small>Info</small>
                                 </p>
                             </a>
                         </div>
@@ -126,39 +80,25 @@ use \Illuminate\Support\Facades\Auth;
 
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{asset('images/logo.png')}}" alt="user-image" class="rounded-circle">
-                        <span class="pro-user-name ml-1">User <i class="mdi mdi-chevron-down"></i></span>
+                        <img src="{{Auth::user()->getPhotoProfil()}}" alt="user-image" class="rounded-circle">
+                        <span class="pro-user-name ml-1">{{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                         <!-- item-->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome !</h6>
+                            <h6 class="text-overflow m-0">Assalamu'alaikum</h6>
                         </div>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="{{route('account.profil.show')}}" class="dropdown-item notify-item">
                             <i class="fe-user"></i>
-                            <span>My Account</span>
+                            <span>Profil</span>
                         </a>
-
+                        <div class="dropdown-divider"></div>
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-settings"></i>
-                            <span>Settings</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-lock"></i>
-                            <span>Lock Screen</span>
+                        <a href="{{route('auth.logout')}}" class="dropdown-item notify-item">
+                            <i class="fe-log-out"></i>
+                            <span>Logout</span>
                         </a>
                     </div>
-                </li>
-
-                <li class="dropdown notification-list">
-                    <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
-                        <i class="fe-settings noti-icon"></i>
-                    </a>
                 </li>
             @endif
 
