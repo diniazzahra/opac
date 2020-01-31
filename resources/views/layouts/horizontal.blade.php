@@ -32,7 +32,7 @@
     <script type="text/javascript" src="{{asset('js/pjax.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app-custom.js')}}"></script>
 </head>
-<body class="drop-menu-dark">
+<body class="drop-menu-dark unsticky-header enlarged">
 <!-- Pre-loader -->
 <div id="preloader">
     <div id="status">

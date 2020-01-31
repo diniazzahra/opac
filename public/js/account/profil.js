@@ -17,6 +17,7 @@ function initVue() {
     $('.app-placeholder').addClass('d-none');
     $('.main_content_app').removeClass('d-none');
 }
+
 try{
     initVue();
 }catch (e) {
