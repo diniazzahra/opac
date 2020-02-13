@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::prefix('v1/buku')->name('v1.buku.')->group(function(){
+    Route::get('get-all','Api\v1\ApiController@getAll')->name('get-all');
+    Route::get('details/{id}','Api\v1\ApiController@details')->name('detail');
+    Route::get('search','Api\v1\ApiController@search')->name('search');
+    Route::get('advancedSearch','Api\v1\ApiController@advancedSearch')->name('advSearch');
 });

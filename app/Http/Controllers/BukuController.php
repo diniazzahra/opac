@@ -40,7 +40,7 @@ class BukuController extends Controller
             return redirect()->back();
         }
         $bukuTerkait = Buku::where('tajuk_subjek', $buku->tajuk_subjek)->where('id','!=',$buku->id)
-            ->orderBy("tahun_terbit","DESC")->get();
+            ->orderBy('tahun_terbit','DESC')->get();
         $data = [
             'buku'=>$buku,
             'bukuTerkait' => $bukuTerkait

@@ -13,6 +13,16 @@ var vcMainTemplate = {
         }
     },
     methods: {
+
+        enable(id,id2){
+            if ($("#"+id).prop('checked',true)) {
+                $('#'+id2).removeAttr('disabled');
+            }
+            else{
+                $('#'+id2).addAttr('disabled');
+            }
+
+        },
         countAll: function (e) {
             var vm = this;
             $.ajax({
