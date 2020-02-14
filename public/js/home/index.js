@@ -13,13 +13,14 @@ var vcMainTemplate = {
         }
     },
     methods: {
-
-        enable(id,id2){
-            if ($("#"+id).prop('checked',true)) {
+        enable: function(id,id2){
+            if ($("#"+id).prop('checked')) {
                 $('#'+id2).removeAttr('disabled');
+                $('#'+id2).focus();
             }
-            else{
-                $('#'+id2).addAttr('disabled');
+            else if(!$("#"+id).prop('checked')){
+                $('#'+id2).attr('disabled', 'disabled');
+                $('#'+id2).val('');
             }
 
         },

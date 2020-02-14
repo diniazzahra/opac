@@ -103,107 +103,48 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             </div>
                             <form action="">
                                 <div class="modal-body">
-                                    {{-- <div class="form-group"> --}}
-                                        {{-- <label for="judul">Judul buku</label> --}}
-                                        {{-- <input type="email" class="form-control" id="judul" aria-describedby="emailHelp" placeholder="Judul buku"> --}}
-                                        {{-- <small class="form-text text-muted">Frasa judul buku. Misal: pertanian, metropolitan, Islami</small> --}}
-                                    {{-- </div> --}}
-                                    {{-- <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <select class="custom-select" name="select1" id="select1">
-                                                <option value="">Judul</option>
-                                                <option value="">Pengarang</option>
-                                                <option value="">Penerbit</option>
-                                                <option value="">Tahun Terbit</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" class="form-control" id="input1" name="input1" placeholder="Input 1">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <select class="custom-select" name="select2" id="select2">
-                                                <option value="">Judul</option>
-                                                <option value="">Pengarang</option>
-                                                <option value="">Penerbit</option>
-                                                <option value="">Tahun Terbit</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" class="form-control" id="input2" name="input2" placeholder="Input 2">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <select class="custom-select" name="select3" id="select3">
-                                                <option value="">Judul</option>
-                                                <option value="">Pengarang</option>
-                                                <option value="">Penerbit</option>
-                                                <option value="">Tahun Terbit</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" class="form-control" id="input3" name="input3" placeholder="Input 3">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <select class="custom-select" name="select4" id="select4">
-                                                <option value="">Judul</option>
-                                                <option value="">Pengarang</option>
-                                                <option value="">Penerbit</option>
-                                                <option value="">Tahun Terbit</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" class="form-control" id="input4" name="input4" placeholder="Input 4">
-                                        </div>
-                                    </div> --}}
-
-
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
                                             <div class="custom-control custom-switch pt-1">
-                                                <input type="checkbox" @chance="enable('judul','inputjudul')" class="custom-control-input" id="judul">
+                                                <input type="checkbox" @change="enable('judul', 'inputjudul')" class="custom-control-input" id="judul" checked="true">
                                                 <label class="custom-control-label" for="judul">Judul Buku</label>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" id="inputjudul" name="inputjudul" placeholder="Judul Buku" disabled>
+                                            <input type="text" class="form-control" id="inputjudul" name="inputjudul" placeholder="Judul Buku" autofocus>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
                                             <div class="custom-control custom-switch pt-1">
-                                                <input type="checkbox" class="custom-control-input" id="penerbit">
+                                                <input type="checkbox" @change="enable('penerbit', 'inputpenerbit')" class="custom-control-input" id="penerbit">
                                                 <label class="custom-control-label" for="penerbit">Penerbit</label>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Penerbit" disabled>
+                                            <input type="text" class="form-control" id="inputpenerbit" name="inputpenerbit" placeholder="Penerbit" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
                                             <div class="custom-control custom-switch pt-1">
-                                                <input type="checkbox" class="custom-control-input" id="kota_terbit">
-                                                <label class="custom-control-label" for="kota_terbit">Kota Terbit</label>
+                                                <input type="checkbox" @change="enable('pengarang', 'inputpengarang')" class="custom-control-input" id="pengarang">
+                                                <label class="custom-control-label" for="pengarang">Pengarang</label>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" id="kota_terbit" name="kota_terbit" placeholder="Kota Terbit" disabled>
+                                            <input type="text" class="form-control" id="inputpengarang" name="inputpengarang" placeholder="Pengarang" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
                                             <div class="custom-control custom-switch pt-1">
-                                                <input type="checkbox" class="custom-control-input" id="tahun_terbit">
+                                                <input type="checkbox" @change="enable('tahun_terbit', 'inputtahun_terbit')" class="custom-control-input" id="tahun_terbit">
                                                 <label class="custom-control-label" for="tahun_terbit">Tahun Terbit</label>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Tahun Terbit" disabled>
+                                            <input type="text" class="form-control" id="inputtahun_terbit" name="inputtahun_terbit" placeholder="Tahun Terbit" disabled>
                                         </div>
                                     </div>
                                 </div>
