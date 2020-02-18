@@ -38,9 +38,9 @@ class ApiController extends ApiApp
 
     public function search(Request $request)
     {
-        $judul = Buku::where('judul','like','%'.$request->input.'%')->get();
-        $penerbit = Buku::where('penerbit','like','%'.$request->input.'%')->get();
-        $pengarang = Buku::where('pengarang','like','%'.$request->input.'%')->get();
+        $judul = Buku::where('judul','like','%'.$request->query('q').'%')->paginate(6);
+        $penerbit = Buku::where('penerbit','like','%'.$request->query('q').'%')->paginate(6);
+        $pengarang = Buku::where('pengarang','like','%'.$request->query('q').'%')->paginate(6);
 
         $data =
         [

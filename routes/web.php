@@ -47,4 +47,6 @@ Route::prefix('auth')->name('auth.')->group(function (){
 Route::prefix('buku')->name('buku.')->group(function (){
     Route::get('/detail/{id?}', 'BukuController@detail')->name('detail');
     Route::get('/search', 'BukuController@search')->name('search');
+    Route::get('/advSearch', 'BukuController@advancedSearch')->name('advSearch');
 });
+

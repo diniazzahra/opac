@@ -11,7 +11,11 @@ var vcMainTemplate = {
     data: function(){
         return{
             searchQuery: '',
-            dataBuku: [],
+            dataBuku: {
+                judul: [],
+                pengarang: [],  
+                penerbit: [],
+            },
             totalItem: 0,
             itemDisplay: 0,
             isAjaxRunning: false,
@@ -44,9 +48,14 @@ var vcMainTemplate = {
                 },
                 success: function (d, s, x) {
                     if(d.status){
-                        vm.dataBuku = d.data.data;
-                        vm.totalItem = d.data.total;
-                        vm.itemDisplay = d.data.data.length;
+                        console.log(d.data.judul);
+                        console.log(d.data.pengarang);
+                        console.log(d.data.penerbit);
+                        vm.dataBuku.judul = d.data.judul;
+                        vm.dataBuku.penerbit = d.data.penerbit;
+                        vm.dataBuku.pengarang = d.data.pengarang;
+                        vm.totalItem = d.data.judul.data.length;
+                        console.log(d.data.judul);
                     }else{
                         vm.showNotification('Something happened: '+d.message);
                     }

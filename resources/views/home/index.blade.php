@@ -101,7 +101,8 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="">
+                            <form action="{{route('buku.advSearch')}}"method="get">
+                                @csrf
                                 <div class="modal-body">
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
@@ -149,7 +150,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Cari</button>
+                                    <button type="submit" class="btn btn-primary">Cari</button>
                                     <button type="button" class="btn btn-lighten-warning" data-dismiss="modal">Batal</button>
                                 </div>
                             </form>

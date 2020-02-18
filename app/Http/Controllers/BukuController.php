@@ -9,7 +9,9 @@ namespace App\Http\Controllers;
 
 
 use App\Buku;
+use App\Http\Controllers\Api\v1\ApiController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class BukuController extends Controller
 {
@@ -40,7 +42,7 @@ class BukuController extends Controller
             return redirect()->back();
         }
         $bukuTerkait = Buku::where('tajuk_subjek', $buku->tajuk_subjek)->where('id','!=',$buku->id)
-            ->orderBy('tahun_terbit','DESC')->get();
+        ->orderBy('tahun_terbit','DESC')->get();
         $data = [
             'buku'=>$buku,
             'bukuTerkait' => $bukuTerkait
@@ -48,4 +50,23 @@ class BukuController extends Controller
         return $this->renderPage($request, 'buku.detail', $data);
     }
 
+    public function advancedSearch(Request $request)
+    {
+        // dd($request->query);
+        $searchQuery = [
+            'judul' => $request->query('inputjudul'),
+            'pengarang' => $request->query('inputpengarang'),
+            'penerbit' => $request->query('inputpenerbit'),
+            'tahun_terbit' => $request->query('inputtahun_terbit'),
+        ];
+        if(is_null($searchQuery)){
+            return redirect()->route('home');
+        }
+
+        $data = [
+            'searchQuery' => $searchQuery,
+        ];
+        return  $this->renderPage($request, 'buku.search', $data);
+
+    }
 }

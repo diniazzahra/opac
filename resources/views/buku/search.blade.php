@@ -18,9 +18,8 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 @section('main_content')
     <div class="main_content_app d-none">
         <div id="app">
-            <vc-buku-search search-url="{{route('ajax.buku.search')}}" query-param="<?=$searchQuery?>" detail-url="{{url('buku/detail')}}"></vc-buku-search>
+            <vc-buku-search search-url="{{route('v1.buku.search')}}" query-param="<?=$searchQuery?>" detail-url="{{url('buku/detail')}}"></vc-buku-search>
         </div>
-
         {{--  Define x-template--}}
         <script type="text/x-template" id="vc-buku-search">
             <div class="wrapper">
@@ -53,39 +52,110 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             </div>
                         </div>
                     </div>
-                    <div class="row pb-2 pt-2">
-                        <div class="col-lg-4">
-                            Menampilkan <em>@{{itemDisplay}} dari @{{totalItem}}</em> hasil pencarian.
-                        </div><!-- end col -->
-                    </div>
-                    <!-- end row -->
-                    <div class="row" :class="{'d-none': !isAjaxRunning}">
-                        <div class="col-12">
-                            <div class="text-center mb-2">
-                                <b-spinner variant="pink" label="Spinning"></b-spinner>
+                    <div v-show="dataBuku.judul.data">
+                        <div class="row pb-2 pt-2">
+                            <div class="col-lg-4">
+                                Menampilkan <em>@{{itemDisplay}} dari @{{totalItem}}</em> hasil pencarian.
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <div class="row" :class="{'d-none': !isAjaxRunning}">
+                            <div class="col-12">
+                                <div class="text-center mb-2">
+                                    <b-spinner variant="pink" label="Spinning"></b-spinner>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6"  v-for="buku in dataBuku.judul.data">
+                                <div class="text-center card-box">
+                                    <div>
+                                        <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
+                                        <p class="text-muted font-13 mb-3">
+                                            @{{ buku.judul }}
+                                        </p>
+                                        <div class="text-left">
+                                            <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
+                                            <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Tahun terbit :</strong> <span class="ml-2">@{{ buku.tahun_terbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
+                                        </div>
+                                        <b-button @click="loadPjax(buku.id)" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>
+                                        <a id="collapseLinkDetail" class="text-info" data-toggle="collapse" href="#collapseDetail"
+                                           role="button" aria-expanded="false" aria-controls="collapseDetail">
+                                            Tampilkan selengkapnya
+                                        </a>
+                                    </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6"  v-for="buku in dataBuku">
-                            <div class="text-center card-box">
-                                <div>
-                                    <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
+                    <div v-show="dataBuku.pengarang.data">
+                        <div class="row pb-2 pt-2">
+                            <div class="col-lg-4">
+                                Menampilkan <em>@{{itemDisplay}} dari @{{totalItem}}</em> hasil pencarian.
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6" v-for="buku in dataBuku.pengarang.data">
+                                <div class="text-center card-box">
+                                    <div>
+                                        <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
 
-                                    <p class="text-muted font-13 mb-3">
-                                        @{{ buku.judul }}
-                                    </p>
+                                        <p class="text-muted font-13 mb-3">
+                                            @{{ buku.judul }}
+                                        </p>
 
-                                    <div class="text-left">
-                                        <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
-                                        <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
-                                        <p class="text-muted font-13"><strong>Tahun terbit :</strong> <span class="ml-2">@{{ buku.tahun_terbit }}</span></p>
-                                        <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
+                                        <div class="text-left">
+                                            <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
+                                            <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Tahun terbit :</strong> <span class="ml-2">@{{ buku.tahun_terbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
+                                        </div>
+                                        <b-button @click="loadPjax(buku.id)" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
                                     </div>
-                                    <b-button @click="loadPjax(buku.id)" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
                                 </div>
-                            </div>
-                        </div> <!-- end col -->
+                            </div> <!-- end col -->
+                            shdahs
+                        </div>
+                    </div>
+
+                    <div v-show="dataBuku.penerbit.data">
+                        <div class="row pb-2 pt-2">
+                            <div class="col-lg-4">
+                                Menampilkan <em>@{{itemDisplay}} dari @{{totalItem}}</em> hasil pencarian.
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6" v-if="(dataBuku.penerbit.data !== null)"  v-for="buku in dataBuku.penerbit.data">
+                                <div class="text-center card-box">
+                                    <div>
+                                        <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
+
+                                        <p class="text-muted font-13 mb-3">
+                                            @{{ buku.judul }}
+                                        </p>
+
+                                        <div class="text-left">
+                                            <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
+                                            <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Tahun terbit :</strong> <span class="ml-2">@{{ buku.tahun_terbit }}</span></p>
+                                            <p class="text-muted font-13"><strong>Informasi :</strong> <span class="ml-2">@{{ buku.call_number_1 }} @{{ buku.call_number_2 }}</span></p>
+                                        </div>
+                                        <b-button @click="loadPjax(buku.id)" class="btn btn-pink btn-rounded waves-effect waves-light">Lihat rincian</b-button>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
                     </div>
                     <!-- Alert -->
                     <b-alert

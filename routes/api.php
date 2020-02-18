@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::prefix('v1/buku')->name('v1.buku.')->group(function(){
-    Route::get('get-all','Api\v1\ApiController@getAll')->name('get-all');
-    Route::get('details/{id}','Api\v1\ApiController@details')->name('detail');
+    Route::get('/','Api\v1\ApiController@getAll')->name('get-all');
+    Route::get('detail/{id}','Api\v1\ApiController@details')->name('detail');
     Route::get('search','Api\v1\ApiController@search')->name('search');
-    Route::get('advancedSearch','Api\v1\ApiController@advancedSearch')->name('advSearch');
+    Route::get('advsearch','Api\v1\ApiController@advancedSearch')->name('adv-search');
 });
