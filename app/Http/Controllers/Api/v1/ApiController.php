@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Api\v1;
 use App\Buku;
 use App\Http\Controllers\Api\ApiApp;
 use App\Http\Controllers\Api\ApiResponse;
+use App\Http\Controllers\BukuController;
+//use App\Http\Transformers\BukuTransformer;
 use Illuminate\Http\Request;
+
+//use App\Http\Transformers\IlluminatePaginatorAdapter;
 
 class ApiController extends ApiApp
 {
@@ -52,6 +56,19 @@ class ApiController extends ApiApp
         $this->reply['data'] = $data;
         return response($this->reply,200);
     }
+
+//    public function paginateSearch(Request $request)
+//    {
+//        $paginator = Buku::paginate();
+//        $buku = $paginator->getCollection();
+//
+//        $response = fractal()
+//            ->collection($buku, new BukuTransformer())
+//            ->paginateWith(new IlluminatePaginatorAdapter($paginator))
+//            ->toArray();
+//
+//        return response()->json($response);
+//    }
 
     public function advancedSearch(Request $request)
     {

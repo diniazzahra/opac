@@ -67,9 +67,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6"  v-for="buku in dataBuku.judul.data">
-                                <div class="text-center card-box">
-                                    <div>
+                            <div class="col-lg-4 col-md-6 mt-2 my-3" v-for="buku in dataBuku.judul.data">
+                                <div class="text-center card h-100 px-3">
+                                    <div class="mt-2">
                                         <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
                                         <p class="text-muted font-13 mb-3">
                                             @{{ buku.judul }}
@@ -85,14 +85,13 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                 </div>
                             </div> <!-- end col -->
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div>
                                     <p>
-                                        <a id="collapseLinkDetail" class="text-info" data-toggle="collapse" href="#collapseDetail"
-                                           role="button" aria-expanded="false" aria-controls="collapseDetail">
+                                        <a id="collapseLinkJudul" class="text-info" data-toggle="collapse" href="#collapseJudul"
+                                           role="button" aria-expanded="false" aria-controls="collapseJudul" >
                                             Tampilkan selengkapnya
                                         </a>
                                     </p>
-
                                 </div>
                             </div>
                         </div>
@@ -105,15 +104,13 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                         </div>
                         <!-- end row -->
                         <div class="row">
-                            <div class="col-lg-4 col-md-6" v-for="buku in dataBuku.pengarang.data">
-                                <div class="text-center card-box">
-                                    <div>
+                            <div class="col-lg-4 col-md-6 mt-2 my-3" v-for="buku in dataBuku.pengarang.data">
+                                <div class="text-center card h-100 px-3">
+                                    <div class="mt-2">
                                         <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
-
                                         <p class="text-muted font-13 mb-3">
                                             @{{ buku.judul }}
                                         </p>
-
                                         <div class="text-left">
                                             <p class="text-muted font-13"><strong>Pengarang :</strong> <span class="ml-2">@{{ buku.pengarang }}</span></p>
                                             <p class="text-muted font-13"><strong>Penerbit :</strong><span class="ml-2">@{{ buku.penerbit }}</span></p>
@@ -124,7 +121,16 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
                             </div> <!-- end col -->
-                            shdahs
+                            <div class="row">
+                                <div class="justify-content-flex-end">
+                                    <p>
+                                        <a id="collapseLinkPengarang" class="text-info" data-toggle="collapse" href="#collapsePengarang"
+                                           role="button" aria-expanded="false" aria-controls="collapsePengarang" >
+                                            Tampilkan selengkapnya
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -136,9 +142,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                         </div>
                         <!-- end row -->
                         <div class="row">
-                            <div class="col-lg-4 col-md-6" v-if="(dataBuku.penerbit.data !== null)"  v-for="buku in dataBuku.penerbit.data">
-                                <div class="text-center card-box">
-                                    <div>
+                            <div class="col-lg-4 col-md-6 mt-2 my-3" v-if="(dataBuku.penerbit.data !== null)"  v-for="buku in dataBuku.penerbit.data">
+                                <div class="text-center card h-100 px-3">
+                                    <div class="mt-2">
                                         <img src="{{asset('images/book-thumbnail.jpg')}}" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
 
                                         <p class="text-muted font-13 mb-3">
@@ -155,6 +161,16 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
                             </div> <!-- end col -->
+                            <div class="row">
+                                <div>
+                                    <p>
+                                        <a id="collapseLinkPenerbit" class="text-info" data-toggle="collapse" href="#collapsePenerbit"
+                                           role="button" aria-expanded="false" aria-controls="collapsePenerbit" >
+                                            Tampilkan selengkapnya
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Alert -->

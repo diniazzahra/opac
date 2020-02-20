@@ -106,8 +106,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
 
-                                <div class="clearfix"></div>
-
+                            <div class="clearfix"></div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <p>
@@ -159,12 +158,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
 
                         <div class="col-md-4">
                             <div class="card-box">
-
                                 <h4 class="header-title mt-0 mb-3">Buku Terkait</h4>
-
                                 @forelse($bukuTerkait as $buku)
                                     <div>
-
                                         <div class="media mb-3">
                                             <div class="d-flex mr-3">
                                                 <a href="#"> <img class="media-object rounded-circle avatar-sm" alt="64x64"
@@ -178,16 +174,13 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                                 <b-link href="{{route('buku.detail',['id'=>$buku->id])}}" variant="info">Lihat Buku</b-link>
                                             </div>
                                         </div>
-
                                     </div>
                                     @empty
                                     <p>(Tidak Tersedia)</p>
                                 @endforelse
-
                             </div>
                         </div><!-- end col -->
                     </div>
-
                 </div>
             </div>
         </div>

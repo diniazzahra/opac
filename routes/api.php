@@ -23,4 +23,6 @@ Route::prefix('v1/buku')->name('v1.buku.')->group(function(){
     Route::get('detail/{id}','Api\v1\ApiController@details')->name('detail');
     Route::get('search','Api\v1\ApiController@search')->name('search');
     Route::get('advsearch','Api\v1\ApiController@advancedSearch')->name('adv-search');
+
+    //Route::get('paginatesearch','Api\v1\ApiController@paginateSearch')->name('paginateSearch');
 });

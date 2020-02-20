@@ -52,13 +52,14 @@ class BukuController extends Controller
 
     public function advancedSearch(Request $request)
     {
-        // dd($request->query);
+        //dd($request->query);
         $searchQuery = [
             'judul' => $request->query('inputjudul'),
             'pengarang' => $request->query('inputpengarang'),
             'penerbit' => $request->query('inputpenerbit'),
             'tahun_terbit' => $request->query('inputtahun_terbit'),
         ];
+        //dd ($searchQuery);
         if(is_null($searchQuery)){
             return redirect()->route('home');
         }
@@ -66,7 +67,7 @@ class BukuController extends Controller
         $data = [
             'searchQuery' => $searchQuery,
         ];
-        return  $this->renderPage($request, 'buku.search', $data);
+        return  $this->renderPage($request, 'buku.advancedsearch', $data);
 
     }
 }
