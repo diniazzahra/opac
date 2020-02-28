@@ -15,7 +15,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         <div class="app">
             <div class="wrapper">
                 <div class="container-fluid mt-4">
-                    <button type="button" class="btn btn-lighten-dark waves-effect  width-md waves-inverse">+ Tambah Data Buku</button>
+                    <a href="{{ route('buku.create') }}" class="btn btn-lighten-dark waves-effect  width-md waves-inverse">+ Tambah Data Buku</a>
                     <div class="row mt-2">
                         <div class="col">
                             <div class="table-responsive">
@@ -31,7 +31,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </thead>
 
                                     <tbody>
-                                    @foreach($data as $book)
+                                    @foreach($buku as $book)
                                     <tr>
                                         <th scope="row">{{$loop->iteration}}</th>
                                         <td>{{$book->no_induk_buku}}</td>

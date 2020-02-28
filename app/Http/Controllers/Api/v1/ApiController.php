@@ -18,9 +18,11 @@ class ApiController extends ApiApp
     // get all data buku
     public function getAll()
     {
-        $bukus = Buku::all();
         // meminta response server dari table buku = $bukus
-        return response()->json($bukus);
+        $bukus = Buku::all();
+        $this->reply['status'] = true;
+        $this->reply['data'] = $bukus;
+        return response($this->reply, 200);
     }
 
     //get id buku yang akan ditampilkan

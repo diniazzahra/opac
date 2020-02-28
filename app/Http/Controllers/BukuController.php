@@ -25,6 +25,46 @@ class BukuController extends Controller
 
     }
 
+    public function index(Request $request)
+    {
+        $buku = Buku::all();
+        $data = [
+            'buku' => $buku
+        ];
+        return $this->renderPage($request, 'buku.index', $data);
+    }
+
+    public function create(Request $request)
+    {
+        return $this->renderPage($request, 'buku.create');
+    }
+
+    public function store(Request $request)
+    {
+        // Buku::create($request->all());
+        // return redirect()->route('buku.index');
+    }
+
+    public function edit(Request $request, $id)
+    {
+        // $buku = Buku::findOrFail($id);
+        // return $this->renderPage($request, 'buku.edit', $buku);
+    }
+
+    public function update(Request $request, $id)
+    {
+        // $buku = Buku::findOrFail($id);
+        // $buku->update($request->all());
+        // return redirect()->route('buku.index');
+    }
+    
+    public function destroy($id)
+    {
+        // $buku = Buku::findOrfail($id);
+        // $buku->delete();
+        // return redirect()->route('buku.index');
+    }
+
     public function search(Request $request){
         $searchQuery = $request->query('query');
         if(is_null($searchQuery)){
