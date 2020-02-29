@@ -14,6 +14,10 @@
                     <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Home</a>
                 </li>
 
+                <li class="has-submenu">
+                    <a href="{{route('buku.index')}}"><i class="mdi mdi-view-dashboard"></i>Mengelola Buku</a>
+                </li>
+
                 @if(Auth::check())
                     <li class="has-submenu">
                         <a href="{{route('home')}}"><i class="mdi mdi-view-dashboard"></i>Menu 1</a>
