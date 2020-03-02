@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1/buku')->name('v1.buku.')->group(function(){
     Route::get('/','Api\v1\ApiController@getAll')->name('get-all');
+    Route::post('/', 'Api\v1\ApiController@store')->name('store');
     Route::get('detail/{id}','Api\v1\ApiController@details')->name('detail');
     Route::get('search','Api\v1\ApiController@search')->name('search');
     Route::get('advsearch','Api\v1\ApiController@advancedSearch')->name('adv-search');

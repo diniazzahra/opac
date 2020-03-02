@@ -39,7 +39,21 @@ class ApiController extends ApiApp
         $this->reply['status'] = true;
         $this->reply['data'] = $data;
         return response($this->reply, 200);
+    }
 
+    public function store(Request $request)
+    {
+        return Buku::create($request->buku);
+    }
+
+    public function update(Request $request)
+    {
+        return Buku::update($request->buku);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        return Buku::findOrFail($id)->delete();
     }
 
     public function search(Request $request)
