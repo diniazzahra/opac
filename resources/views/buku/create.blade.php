@@ -172,12 +172,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             <input class="form-control" type="text" v-model="buku.selesai_diproses" placeholder="Selesai Diproses">
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
         <script type="text/javascript" src="{{asset('js/buku/detail.js')}}"></script>
     </div>
-
-
 @endsection

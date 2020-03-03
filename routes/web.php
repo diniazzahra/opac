@@ -46,7 +46,6 @@ Route::prefix('auth')->name('auth.')->group(function (){
  */
 Route::prefix('buku')->name('buku.')->group(function (){
     Route::get('/', 'BukuController@index')->name('index');
-    Route::post('/', 'BukuController@store')->name('store');
     Route::get('/create', 'BukuController@create')->name('create');
     Route::get('/{id}/edit', 'BukuController@edit')->name('edit');
     Route::patch('/{id}/edit', 'BukuController@update')->name('update');
@@ -56,3 +55,11 @@ Route::prefix('buku')->name('buku.')->group(function (){
     Route::get('/advSearch', 'BukuController@advancedSearch')->name('advSearch');
 });
 
+/**
+ * Notif
+ */
+Route::prefix('notif')->name('notif.')->group(function (){
+    Route::post('/', 'NotificationController@store')->name('store');
+    Route::get('/create', 'NotificationController@create')->name('create');
+    Route::get('/create/{topic}', 'NotificationController@topic')->name('topic');
+});
