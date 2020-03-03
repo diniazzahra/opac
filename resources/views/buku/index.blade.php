@@ -15,7 +15,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         <div class="app">
             <div class="wrapper">
                 <div class="container-fluid mt-4">
-                    <a href="{{ route('buku.create') }}" class="btn btn-lighten-dark waves-effect  width-md waves-inverse">+ Tambah Data Buku</a>
+                    <a href="{{ route('buku.create') }}" class="btn btn-lighten-dark waves-effect width-md waves-inverse">+ Tambah Data Buku</a>
                     <div class="row mt-2">
                         <div class="col">
                             <div class="table-responsive">
@@ -23,10 +23,11 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     <thead class="thead-dark">
                                     <tr>
                                         <th>No</th>
-                                        <th>No Induk Buku</th>
-                                        <th>Pengarang</th>
-                                        <th>Judul</th>
-                                        <th>Penerbit</th>
+                                        <th class="col-lg-2 text-center">No Induk Buku</th>
+                                        <th class="text-center">Pengarang</th>
+                                        <th class="text-center">Judul</th>
+                                        <th class="text-center">Penerbit</th>
+                                        <th class="col-lg-2 text-center">Aksi</th>
                                     </tr>
                                     </thead>
 
@@ -38,6 +39,10 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                         <td>{{$book->pengarang}}</td>
                                         <td>{{$book->judul}}</td>
                                         <td>{{$book->penerbit}}</td>
+                                        <td>
+                                            <a class="btn btn-icon waves-effect btn-warning"><i class="far fa-eye"></i></a>
+                                            <a class="btn btn-icon waves-effect btn-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>
