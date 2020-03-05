@@ -26,6 +26,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-vue.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/placeholder-loading.min.css')}}">
     <!-- JS-->
+    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/manifest.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/vendor.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-vue.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>

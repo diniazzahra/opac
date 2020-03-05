@@ -12,7 +12,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
     <div class="main_content_app d-none">
         <link rel="stylesheet" type="text/css" href="{{asset('css/home/index.css')}}">
         <!-- main app -->
-        <div class="app">
+        <div id="app">
             <div class="wrapper">
                 <div class="container-fluid mt-4">
                     <div class="form-group row">
@@ -172,9 +172,17 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                             <input class="form-control" type="text" v-model="buku.selesai_diproses" placeholder="Selesai Diproses">
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-md-8">
+                            <a href="#" @click="submitBuku" class="btn btn-sm btn-lighten-info" style="float: right">Tambah Buku</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="{{asset('js/buku/detail.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/buku/create.js')}}"></script>
+
     </div>
 @endsection

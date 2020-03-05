@@ -27,11 +27,13 @@ function initVue() {
         el: '#app',
         data: function() {
             return {
+                // adas: 'asd',
                 buku: {}
             }
         },
         methods:{
             submitBuku: function (){
+                console.log('asd');
                 // store data buku
                 axios.post('/api/v1/buku', {
                     buku: this.buku

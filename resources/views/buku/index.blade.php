@@ -40,6 +40,9 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                         <td>{{$book->judul}}</td>
                                         <td>{{$book->penerbit}}</td>
                                         <td>
+                                        {{-- <form action="{{}}" method = "POST"> --}}
+                                            @csrf
+                                            @method('DELETE')
                                             <a class="btn btn-icon waves-effect btn-warning"><i class="far fa-eye"></i></a>
                                             <a class="btn btn-icon waves-effect btn-danger"><i class="fas fa-trash"></i></a>
                                         </td>
