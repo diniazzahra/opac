@@ -13,7 +13,7 @@ var vcMainTemplate = {
             searchQuery: '',
             dataBuku: {
                 judul: [],
-                pengarang: [],  
+                pengarang: [],
                 penerbit: [],
             },
             totalItem: 0,

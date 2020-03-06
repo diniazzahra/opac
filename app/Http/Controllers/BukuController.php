@@ -57,7 +57,7 @@ class BukuController extends Controller
         // $buku->update($request->all());
         // return redirect()->route('buku.index');
     }
-    
+
     public function destroy($id)
     {
         // $buku = Buku::findOrfail($id);
