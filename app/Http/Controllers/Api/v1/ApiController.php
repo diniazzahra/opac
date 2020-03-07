@@ -53,7 +53,8 @@ class ApiController extends ApiApp
 
     public function delete(Request $request, $id)
     {
-        return Buku::findOrFail($id)->delete();
+        Buku::findOrFail($id)->delete();
+        return 'BRASIL DI DELETE';
     }
 
     public function search(Request $request)

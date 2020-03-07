@@ -36,7 +36,15 @@ function initVue() {
                 axios.get('/api/v1/buku')
                 .then(response => {
                     console.log(response);
-                    this.dataBuku = response.data;
+                    this.dataBuku = response.data.data;
+                }).catch(error => console.error(error));
+            },
+            deleteBuku: function (id){
+                // load data buku
+                axios.delete('/api/v1/buku/destroy/'+id)
+                .then(response => {
+                    console.log(response);
+                    this.loadBuku();
                 }).catch(error => console.error(error));
             }
         },
