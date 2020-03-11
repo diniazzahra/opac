@@ -15,48 +15,48 @@ $appendTitle = AppHelpers::appendTitle($title, true);
         <div id="app">
             <div class="wrapper">
                 <div class="container-fluid mt-4">
-                    <div class="row justify-content-center">
-                        <div class = "card">
-                            <div class="card-body">
-                                <a href="{{ route('buku.create') }}" class="btn btn-lighten-dark waves-effect width-md waves-inverse">+ Tambah Data Buku</a>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <div class="table-responsive">
-                                            <table id="datatable" class="table mb-0">
-                                                <thead class="thead-dark">
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th class="col-lg-2 text-center">No Induk Buku</th>
-                                                    <th class="text-center">Pengarang</th>
-                                                    <th class="text-center">Judul</th>
-                                                    <th class="text-center">Penerbit</th>
-                                                    <th class="col-lg-3 text-center">Aksi</th>
-                                                </tr>
-                                                </thead>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h3 class="mt-0 header-title"><b>Data Buku</b></h3>
+                                <a href="{{ route('buku.create') }}" class="mt-3 mb-2 btn btn-lighten-secondary waves-effect width-md waves-inverse">+ Tambah Data Buku</a>
+                                <div class="responsive-table-plugin">
+                                <div class="table-rep-plugin">
+                                <div class="table-responsive" data-pattern="priority-columns">
+                                <table id="datatable" class="table table-bordered table-bordered dt-responsive nowrap fixed">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">No. Induk Buku</th>
+                                        <th scope="col">Pengarang</th>
+                                        <th scope="col">Judul</th>
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($buku as $data)
+                                    <tr>
+                                        <td>{{$data->no_induk_buku}}</td>
+                                        <td>{{$data->pengarang}}</td>
+                                        <td>{{$data->judul}}</td>
+                                        <td>{{$data->penerbit}}</td>
+                                        <td>
+                                            <a href="{{route('buku.detail',$data->id)}}" class="btn btn-icon waves-effect btn-warning"><i class="far fa-eye"></i></a>
+                                            <a href="#" @click="deleteBuku({{$data->id}})" class="btn btn-icon waves-effect btn-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
 
-                                                <tbody>
-
-                                                <tr v-for="buku, index in dataBuku">
-                                                    <th scope="row">@{{index}}</th>
-                                                    <td>@{{buku.no_induk_buku}}</td>
-                                                    <td>@{{buku.pengarang}}</td>
-                                                    <td>@{{buku.judul}}</td>
-                                                    <td>@{{buku.penerbit}}</td>
-                                                    <td>
-                                                    <a href="#" class="btn btn-icon waves-effect btn-warning"><i class="far fa-eye"></i></a>
-                                                        <a href="#" @click="deleteBuku(buku.id)" class="btn btn-icon waves-effect btn-danger"><i class="fas fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
             </div>
         </div>
         <script type="text/javascript" src="{{asset('js/buku/index.js')}}"></script>

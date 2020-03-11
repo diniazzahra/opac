@@ -153,6 +153,15 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                     </div>
                                 </div>
 
+                                @if(Auth::check())
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-md-10">
+                                    <a href="{{route('buku.edit',$buku->id)}}" class="btn btn-sm btn-lighten-info" style="float: right">Ubah Data Buku</a>
+                                    </div>
+                                </div>
+                                @endif
+
                             </div>
                         </div><!-- end col -->
 

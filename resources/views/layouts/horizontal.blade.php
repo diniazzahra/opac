@@ -26,11 +26,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-vue.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/placeholder-loading.min.css')}}">
     {{-- DATATABLE PLUGINS --}}
-    <link rel="stylesheet" type="text/css" href="{{asset('adminto/css/dataTables.bootstrap4.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('adminto/css/responsive.bootstrap4.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('adminto/css/buttons.bootstrap4.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('adminto/css/select.bootstrap4.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('adminto/libs/datatables/dataTables.bootstrap4.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('adminto/libs/datatables/responsive.bootstrap4.css')}}"> --}}
     <!-- JS-->
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/manifest.js')}}"></script>
@@ -40,19 +37,6 @@
     <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/pjax.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app-custom.js')}}"></script>
-    {{-- DATATABLE PLUGINS --}}
-    <script type="text/javascript" src="{{asset('js/jquery.dataTables.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/dataTables.bootstrap4.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/dataTables.responsive.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/responsive.bootstrap4.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/dataTables.buttons.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/buttons.bootstrap4.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/buttons.html5.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/buttons.flash.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/buttons.print.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/dataTables.keyTable.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/dataTables.select.min.js')}}"></script>
-
 </head>
 <body class="drop-menu-dark unsticky-header enlarged">
 <!-- Pre-loader -->
@@ -79,9 +63,15 @@
     </div>
     @include('partials.footer')
     <script type="text/javascript" src="{{asset('adminto/js/vendor.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('adminto/js/app.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/vee-validate/id.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.serializeToJSON.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('adminto/js/datatables.init.js')}}"></script>
+    {{-- DATATABLE PLUGINS --}}
+    <script type="text/javascript" src="{{asset('adminto/libs/datatables/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('adminto/libs/datatables/dataTables.bootstrap4.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{asset('adminto/libs/datatables/dataTables.responsive.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('adminto/libs/datatables/responsive.bootstrap4.min.js')}}"></script> --}}
+    {{-- INIT JS --}}
+    <script type="text/javascript" src="{{asset('adminto/js/pages/datatables.init.js')}}"></script>
+    <script type="text/javascript" src="{{asset('adminto/js/app.min.js')}}"></script>
 </body>
 </html>

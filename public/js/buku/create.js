@@ -39,6 +39,7 @@ function initVue() {
                     buku: this.buku
                 }).then(response => {
                     console.log(response);
+                    window.location.replace("/buku");
                     this.buku = response.data;
                 }).catch(error => console.error(error));
             }

@@ -43,7 +43,10 @@ class ApiController extends ApiApp
 
     public function store(Request $request)
     {
-        return Buku::create($request->buku);
+        $buku = Buku::create($request->buku);
+        $this->reply['status'] = true;
+        $this->reply['data'] = $buku;
+        return response($this->reply,200);
     }
 
     public function update(Request $request)
@@ -54,7 +57,7 @@ class ApiController extends ApiApp
     public function delete(Request $request, $id)
     {
         Buku::findOrFail($id)->delete();
-        return 'BRASIL DI DELETE';
+        return 'BERHASIL DI DELETE';
     }
 
     public function search(Request $request)

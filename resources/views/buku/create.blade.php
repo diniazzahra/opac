@@ -182,7 +182,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                 <div class="row">
                                     <div class="col-sm-2"></div>
                                     <div class="col-md-10">
-                                        <a href="#" @click="submitBuku" class="btn btn-sm btn-lighten-info" style="float: right">Tambah Buku</a>
+                                        <a href="" @click="submitBuku" class="btn btn-sm btn-lighten-info" style="float: right">Tambah Buku</a>
                                     </div>
                                 </div>
                             </div>

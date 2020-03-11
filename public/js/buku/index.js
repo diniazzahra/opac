@@ -45,6 +45,7 @@ function initVue() {
                 .then(response => {
                     console.log(response);
                     this.loadBuku();
+                    window.location.reload();
                 }).catch(error => console.error(error));
             }
         },

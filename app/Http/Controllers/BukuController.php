@@ -47,8 +47,8 @@ class BukuController extends Controller
 
     public function edit(Request $request, $id)
     {
-        // $buku = Buku::findOrFail($id);
-        // return $this->renderPage($request, 'buku.edit', $buku);
+        $buku = Buku::findOrFail($id);
+        return $this->renderPage($request, 'buku.edit', $buku);
     }
 
     public function update(Request $request, $id)
