@@ -42,7 +42,7 @@ $appendTitle = AppHelpers::appendTitle($title, true);
                                         <td>{{$data->penerbit}}</td>
                                         <td>
                                             <a href="{{route('buku.detail',$data->id)}}" class="btn btn-icon waves-effect btn-warning"><i class="far fa-eye"></i></a>
-                                            <a href="#" @click="deleteBuku({{$data->id}})" class="btn btn-icon waves-effect btn-danger"><i class="fas fa-trash"></i></a>
+                                            <a href="#" @click="deleteBuku({{$data->id}})" class="btn btn-icon waves-effect btn-danger" ><i class="fas fa-trash"></i></a>
                                         </td>
 
                                     </tr>
@@ -60,6 +60,12 @@ $appendTitle = AppHelpers::appendTitle($title, true);
             </div>
         </div>
         <script type="text/javascript" src="{{asset('js/buku/index.js')}}"></script>
+        {{-- DATATABLE PLUGINS --}}
+        <script type="text/javascript" src="{{asset('adminto/libs/datatables/jquery.dataTables.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('adminto/libs/datatables/dataTables.bootstrap4.js')}}"></script>
+
+        {{-- INIT JS --}}
+        <script type="text/javascript" src="{{asset('adminto/js/pages/datatables.init.js')}}"></script>
     </div>
 
 

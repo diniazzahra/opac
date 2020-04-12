@@ -12,6 +12,7 @@
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
     <title>@yield('title', config('app.name'))</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('adminto/libs/datatables/dataTables.bootstrap4.css')}}">
 </head>
 <body>
     @yield('main_content')

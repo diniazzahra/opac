@@ -48,7 +48,7 @@ Route::prefix('buku')->name('buku.')->group(function (){
     Route::get('/', 'BukuController@index')->name('index');
     Route::get('/create', 'BukuController@create')->name('create');
     Route::get('/{id}/edit', 'BukuController@edit')->name('edit');
-    Route::patch('/{id}/edit', 'BukuController@update')->name('update');
+    Route::patch('/{id}', 'BukuController@update')->name('update');
     Route::delete('/{id}/destroy', 'BukuController@destroy')->name('destroy');
     Route::get('/detail/{id?}', 'BukuController@detail')->name('detail');
     Route::get('/search', 'BukuController@search')->name('search');

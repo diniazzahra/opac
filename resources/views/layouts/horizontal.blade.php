@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/placeholder-loading.min.css')}}">
     {{-- DATATABLE PLUGINS --}}
     <link rel="stylesheet" type="text/css" href="{{asset('adminto/libs/datatables/dataTables.bootstrap4.css')}}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('adminto/libs/datatables/responsive.bootstrap4.css')}}"> --}}
+
     <!-- JS-->
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/manifest.js')}}"></script>
@@ -68,8 +68,7 @@
     {{-- DATATABLE PLUGINS --}}
     <script type="text/javascript" src="{{asset('adminto/libs/datatables/jquery.dataTables.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('adminto/libs/datatables/dataTables.bootstrap4.js')}}"></script>
-    {{-- <script type="text/javascript" src="{{asset('adminto/libs/datatables/dataTables.responsive.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('adminto/libs/datatables/responsive.bootstrap4.min.js')}}"></script> --}}
+
     {{-- INIT JS --}}
     <script type="text/javascript" src="{{asset('adminto/js/pages/datatables.init.js')}}"></script>
     <script type="text/javascript" src="{{asset('adminto/js/app.min.js')}}"></script>
